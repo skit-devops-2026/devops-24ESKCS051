@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zenith | Lab & Audio Request System</title>
+  </head>
+  <body>
+    <main>
+      <section id="resources">
+        <div>
+          <form>
+            <div>
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" type="text" placeholder="Enter your name" />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="name@college.edu" />
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <label for="department">Department</label>
+                <select id="department">
+                  <option>Computer Science</option>
+                  <option>Electronics</option>
+                  <option>Physics</option>
+                  <option>Communication</option>
+                  <option>Music & Media</option>
+                </select>
+              </div>
+              <div>
+                <label for="type">Resource type</label>
+                <select id="type">
+                  <option>Lab</option>
+                  <option>Auditorium</option>
+                  <option>Seminar Hall</option>
+                  <option>Conference Room</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <label for="date">Preferred date</label>
+                <input id="date" type="date" />
+              </div>
+              <div>
+                <label for="time">Preferred time</label>
+                <input id="time" type="time" />
+              </div>
+            </div>
+
+            <div>
+              <label for="purpose">Purpose</label>
+              <textarea
+                id="purpose"
+                placeholder="Tell us why you need the space, equipment, or audio setup..."
+              ></textarea>
+            </div>
+
+            <button type="submit">Submit Request</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
