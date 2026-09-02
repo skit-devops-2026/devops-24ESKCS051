@@ -1,71 +1,72 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zenith | Lab & Audio Request System</title>
-  </head>
-  <body>
-    <main>
-      <section id="resources">
-        <div>
-          <form>
-            <div>
-              <div>
-                <label for="name">Full name</label>
-                <input id="name" type="text" placeholder="Enter your name" />
-              </div>
-              <div>
-                <label for="email">Email</label>
-                <input id="email" type="email" placeholder="name@college.edu" />
-              </div>
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Room Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-            <div>
-              <div>
-                <label for="department">Department</label>
-                <select id="department">
-                  <option>Computer Science</option>
-                  <option>Electronics</option>
-                  <option>Physics</option>
-                  <option>Communication</option>
-                  <option>Music & Media</option>
-                </select>
-              </div>
-              <div>
-                <label for="type">Resource type</label>
-                <select id="type">
-                  <option>Lab</option>
-                  <option>Auditorium</option>
-                  <option>Seminar Hall</option>
-                  <option>Conference Room</option>
-                </select>
-              </div>
-            </div>
+  <header class="site-header">
+    <h1>Campus Room Booking System</h1>
+    <p>Book a classroom or auditorium in a few clicks</p>
+  </header>
 
-            <div>
-              <div>
-                <label for="date">Preferred date</label>
-                <input id="date" type="date" />
-              </div>
-              <div>
-                <label for="time">Preferred time</label>
-                <input id="time" type="time" />
-              </div>
-            </div>
+  <nav class="main-nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="booking.html">Book a Room</a>
+    <a href="admin.html">Admin Panel</a>
+  </nav>
 
-            <div>
-              <label for="purpose">Purpose</label>
-              <textarea
-                id="purpose"
-                placeholder="Tell us why you need the space, equipment, or audio setup..."
-              ></textarea>
-            </div>
+  <main class="container">
 
-            <button type="submit">Submit Request</button>
-          </form>
-        </div>
-      </section>
-    </main>
-  </body>
+    <section class="hero">
+      <h2>Welcome</h2>
+      <p>
+        This system lets students and teachers request an empty classroom
+        or the auditorium for 2-3 hours. Once you submit a request, it goes
+        to the admin for approval. When approved, the room is officially
+        allotted to you.
+      </p>
+    </section>
+
+    <section class="login-box">
+      <h2>Login</h2>
+      <form action="#" method="post">
+
+        <label for="role">I am a</label>
+        <select id="role" name="role">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section class="how-it-works">
+      <h2>How it works</h2>
+      <ol>
+        <li>Student or teacher fills the booking request form.</li>
+        <li>Request is sent to the admin with room, date, and time details.</li>
+        <li>Admin checks if the room is free and approves or rejects it.</li>
+        <li>If approved, the room is allotted to the requester.</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Campus Room Booking &mdash; Phase 1 (Basic Structure)</p>
+  </footer>
+
+</body>
 </html>

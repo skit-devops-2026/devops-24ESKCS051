@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Campus Room Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Campus Room Booking System</h1>
+    <p>Admin Panel &mdash; Approve or Reject Requests</p>
+  </header>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="booking.html">Book a Room</a>
+    <a href="admin.html" class="active">Admin Panel</a>
+  </nav>
+
+  <main class="container">
+
+    <section class="admin-summary">
+      <div class="summary-card">
+        <h3>Pending</h3>
+        <p class="count">3</p>
+      </div>
+      <div class="summary-card">
+        <h3>Approved</h3>
+        <p class="count">12</p>
+      </div>
+      <div class="summary-card">
+        <h3>Rejected</h3>
+        <p class="count">2</p>
+      </div>
+    </section>
+
+    <section class="admin-table-box">
+      <h2>Booking Requests</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Requester</th>
+            <th>Type</th>
+            <th>Room</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Purpose</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ankit Sharma</td>
+            <td>Student</td>
+            <td>Room 204</td>
+            <td>2026-09-05</td>
+            <td>10:00 - 12:00</td>
+            <td>Club meeting</td>
+            <td class="status pending">Pending</td>
+            <td class="actions">
+              <button class="approve-btn">Approve</button>
+              <button class="reject-btn">Reject</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Priya Verma</td>
+            <td>Teacher</td>
+            <td>Main Auditorium</td>
+            <td>2026-09-10</td>
+            <td>14:00 - 16:00</td>
+            <td>Guest lecture</td>
+            <td class="status pending">Pending</td>
+            <td class="actions">
+              <button class="approve-btn">Approve</button>
+              <button class="reject-btn">Reject</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Rahul Nair</td>
+            <td>Student</td>
+            <td>Room 110</td>
+            <td>2026-09-01</td>
+            <td>09:00 - 11:00</td>
+            <td>Group study</td>
+            <td class="status rejected">Rejected</td>
+            <td class="actions">
+              <button class="approve-btn" disabled>Approve</button>
+              <button class="reject-btn" disabled>Reject</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Campus Room Booking &mdash; Phase 1 (Basic Structure)</p>
+  </footer>
+
+</body>
+</html>
