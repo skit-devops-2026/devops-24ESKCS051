@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Room - Campus Room Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Campus Room Booking System</h1>
+    <p>Request a classroom or the auditorium</p>
+  </header>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="booking.html" class="active">Book a Room</a>
+    <a href="admin.html">Admin Panel</a>
+  </nav>
+
+  <main class="container">
+
+    <section class="form-box">
+      <h2>New Booking Request</h2>
+      <form action="#" method="post">
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name">
+
+        <label for="requester-type">You are booking as</label>
+        <select id="requester-type" name="requester-type">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+
+        <label for="room-type">Room Type</label>
+        <select id="room-type" name="room-type">
+          <option value="classroom">Classroom</option>
+          <option value="auditorium">Auditorium</option>
+        </select>
+
+        <label for="room-number">Room Number / Auditorium Name</label>
+        <input type="text" id="room-number" name="room-number" placeholder="e.g. Room 204 or Main Auditorium">
+
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date">
+
+        <label for="start-time">Start Time</label>
+        <input type="time" id="start-time" name="start-time">
+
+        <label for="end-time">End Time (2-3 hours max)</label>
+        <input type="time" id="end-time" name="end-time">
+
+        <label for="purpose">Purpose of Booking</label>
+        <textarea id="purpose" name="purpose" rows="4" placeholder="e.g. Guest lecture, club meeting, seminar"></textarea>
+
+        <button type="submit">Submit Request</button>
+      </form>
+    </section>
+
+    <section class="status-box">
+      <h2>My Requests</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Room</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Room 204</td>
+            <td>2026-09-05</td>
+            <td>10:00 - 12:00</td>
+            <td class="status pending">Pending</td>
+          </tr>
+          <tr>
+            <td>Main Auditorium</td>
+            <td>2026-09-10</td>
+            <td>14:00 - 16:00</td>
+            <td class="status approved">Approved</td>
+          </tr>
+          <tr>
+            <td>Room 110</td>
+            <td>2026-09-01</td>
+            <td>09:00 - 11:00</td>
+            <td class="status rejected">Rejected</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Campus Room Booking &mdash; Phase 1 (Basic Structure)</p>
+  </footer>
+
+</body>
+</html>
