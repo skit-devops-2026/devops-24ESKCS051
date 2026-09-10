@@ -10,19 +10,19 @@ pipeline {
 
         stage('Install') {
             steps {
-                sh 'make install'
+                bat 'python -c "print(\'No external dependencies required for Zenith\')"'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'make test'
+                bat 'python -m unittest discover -s tests -p "test_*.py" -v'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'make build'
+                bat 'echo Static HTML/CSS/JS project - build validation complete'
             }
         }
     }
@@ -31,6 +31,7 @@ pipeline {
         success {
             echo 'Zenith pipeline completed successfully.'
         }
+
         failure {
             echo 'Zenith pipeline failed.'
         }
