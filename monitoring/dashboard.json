@@ -1,0 +1,15 @@
+{
+  "title": "Zenith Application",
+  "panels": [
+    {
+      "title": "HTTP Requests",
+      "type": "timeseries",
+      "targets": [{ "expr": "zenith_http_requests_total" }]
+    },
+    {
+      "title": "Uptime",
+      "type": "stat",
+      "targets": [{ "expr": "zenith_uptime_seconds" }]
+    }
+  ]
+}

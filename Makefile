@@ -10,10 +10,10 @@ build:
 	@echo "Static HTML/CSS/JS project - build validation complete"
 
 run:
-	@echo "Open index.html in a browser to run Zenith"
+	python server.py
 
 docker-build:
-	@echo "TODO: docker build for frontend and backend" && exit 1
+	docker build -t zenith:latest .
 
 docker-up:
 	docker compose up --build
