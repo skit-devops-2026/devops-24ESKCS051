@@ -32,10 +32,7 @@ docker compose up --build
 
 ## Live URL
 
-Local deployment: http://localhost:8080
-
-For a public deployment, replace this URL with the address assigned by the
-chosen hosting provider.
+https://skit-devops-2026.github.io/devops-24ESKCS051/
 
 ## Health endpoint
 
