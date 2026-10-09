@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: zenith
-          image: ghcr.io/ankit-sharma-cyber/zenith:latest
+          image: ghcr.io/skit-devops-2026/zenith:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
