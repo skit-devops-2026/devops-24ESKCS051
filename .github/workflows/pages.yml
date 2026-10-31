@@ -24,13 +24,28 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: client/package-lock.json
+
+      - name: Install frontend dependencies
+        working-directory: client
+        run: npm ci
+
+      - name: Build React frontend
+        working-directory: client
+        run: npm run build
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
       - name: Upload frontend artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: frontend
+          path: client/dist
 
       - name: Deploy to Pages
         id: deployment
