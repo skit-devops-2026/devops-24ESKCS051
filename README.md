@@ -13,8 +13,8 @@ Zenith is a college management website designed to manage and organize college r
 ## Tech stack
 
 - Frontend: HTML, CSS, JavaScript, React
-- Backend: Not specified
-- Database: Not specified
+- Runtime: Python standard-library HTTP server
+- Monitoring: Prometheus-compatible `/metrics` endpoint
 
 ## Running locally
 
@@ -23,9 +23,16 @@ make install
 make run
 ```
 
+The container serves the frontend on port 8080 and exposes `/health` and
+`/metrics` for deployment checks. Start the application and Prometheus with:
+
+```bash
+docker compose up --build
+```
+
 ## Live URL
 
-<Add once M5 is done. Until then, leave as is.>
+https://skit-devops-2026.github.io/devops-24ESKCS051/
 
 ## Health endpoint
 

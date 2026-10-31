@@ -1,0 +1,19 @@
+services:
+  zenith:
+    build: .
+    image: zenith:latest
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v2.53.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    depends_on:
+      - zenith
+    restart: unless-stopped
