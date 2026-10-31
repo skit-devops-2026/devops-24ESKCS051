@@ -1,0 +1,584 @@
+/* ===========================================================
+   Zenith - Campus Room Booking
+   Modern, beginner-friendly stylesheet. Plain CSS, no framework.
+   Uses CSS variables (defined in :root) so colors/spacing are easy
+   to tweak from one place instead of hunting through the file.
+   =========================================================== */
+
+:root {
+  --color-bg: #f6f7fb;
+  --color-surface: #ffffff;
+  --color-text: #1a1b25;
+  --color-text-muted: #6b7280;
+  --color-primary: #4f46e5;
+  --color-primary-dark: #4338ca;
+  --color-primary-light: #eef2ff;
+  --color-accent: #06b6d4;
+  --color-border: #e5e7eb;
+  --color-success-bg: #dcfce7;
+  --color-success-text: #166534;
+  --color-warning-bg: #fef3c7;
+  --color-warning-text: #92400e;
+  --color-danger: #ef4444;
+  --color-danger-dark: #dc2626;
+  --color-danger-bg: #fee2e2;
+  --color-danger-text: #991b1b;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 18px rgba(17, 24, 39, 0.06);
+  --shadow-hover: 0 10px 28px rgba(17, 24, 39, 0.10);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px 56px;
+}
+
+/* ---------- Header + Nav ---------- */
+
+.site-header {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 45%, #4338ca 100%);
+  color: #fff;
+  padding: 18px 28px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 12px rgba(30, 27, 75, 0.25);
+}
+
+.site-header h1 {
+  margin: 0 0 14px;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  align-items: center;
+}
+
+.main-nav a {
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.main-nav a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-nav a.active {
+  color: #fff;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.nav-logout-btn {
+  margin-left: auto;
+  background: rgba(239, 68, 68, 0.9);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.nav-logout-btn:hover {
+  background: var(--color-danger-dark);
+  transform: translateY(-1px);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+/* ---------- Hero (Home page) ---------- */
+
+.hero {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #06b6d4 100%);
+  color: #fff;
+  padding: 72px 20px;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.hero h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  max-width: 700px;
+  margin: 0 auto 16px;
+}
+
+.hero p {
+  max-width: 560px;
+  margin: 0 auto 28px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- Generic "boxes" (cards) ---------- */
+
+.login-box,
+.booking-box,
+.my-requests-box,
+.admin-box,
+.faq-box,
+.about-box,
+.rooms-cta,
+.page-intro {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+
+.page-intro {
+  text-align: center;
+}
+
+.page-intro p {
+  color: var(--color-text-muted);
+  margin-top: 8px;
+}
+
+.rooms-cta {
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 20px;
+  margin: 36px 0 16px;
+}
+
+.loading-text {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 40px 0;
+}
+
+/* ---------- Step cards (Home "How it works") ---------- */
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.step-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.step-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+/* ---------- Room cards (Rooms page) ---------- */
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin-bottom: 8px;
+}
+
+.room-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.room-card-top {
+  margin-bottom: 10px;
+}
+
+.room-card h4 {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.room-capacity {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 0 0 4px;
+}
+
+.room-facilities {
+  font-size: 13px;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.room-type-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.room-type-classroom {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.room-type-auditorium {
+  background: #ecfeff;
+  color: #0e7490;
+}
+
+/* ---------- Forms ---------- */
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+}
+
+label {
+  margin-top: 14px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+input,
+select {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-family: inherit;
+  background: #fff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+button {
+  margin-top: 22px;
+  padding: 11px 18px;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #fff;
+  color: var(--color-primary);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  text-decoration: none;
+}
+
+.cta-button-ghost {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  box-shadow: none;
+}
+
+.cta-button-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+.form-error {
+  background: var(--color-danger-bg);
+  color: var(--color-danger-text);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  border: 1px solid #fecaca;
+}
+
+.form-success {
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  border: 1px solid #bbf7d0;
+}
+
+/* ---------- Tables ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14px;
+}
+
+th {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+tbody tr {
+  transition: background 0.1s ease;
+}
+
+tbody tr:hover {
+  background: var(--color-primary-light);
+}
+
+/* ---------- Status badges ---------- */
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.status-pending {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning-text);
+}
+
+.status-approved {
+  background-color: var(--color-success-bg);
+  color: var(--color-success-text);
+}
+
+.status-rejected {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger-text);
+}
+
+/* ---------- Admin action buttons ---------- */
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-actions button {
+  margin-top: 0;
+  padding: 7px 14px;
+  font-size: 13px;
+}
+
+.reject-btn {
+  background-color: var(--color-danger);
+}
+
+.reject-btn:hover {
+  background-color: var(--color-danger-dark);
+}
+
+/* ---------- FAQ ---------- */
+
+.faq-item {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.faq-item h3 {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+/* ---------- Responsive tweaks ---------- */
+
+@media (max-width: 600px) {
+  .site-header {
+    padding: 14px 18px;
+  }
+
+  .main-nav {
+    gap: 14px;
+  }
+
+  .nav-logout-btn {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .hero {
+    padding: 48px 16px;
+  }
+
+  .login-box,
+  .booking-box,
+  .my-requests-box,
+  .admin-box,
+  .faq-box,
+  .about-box {
+    padding: 20px;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 12px;
+    padding: 10px;
+  }
+
+  td {
+    border-bottom: none;
+    padding: 6px 4px;
+  }
+}
