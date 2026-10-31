@@ -36,11 +36,11 @@ have:
 - `devops-24ESKCS050`
 - `devops-24ESKCS051`
 
-They go in **alongside**, not instead of, the existing `frontend/`,
-`server.js`, `Dockerfile`, and `k8s/` files already in those repos - those
-are what your DevOps course (CSUL511) milestones are graded on, and nothing
-here touches or deletes them. Put `client/` and `server/` (and this
-`MANIFEST.md`) at the root of each repo, next to the existing folders.
+They go in **alongside** the existing `server.py`, `Dockerfile`, and `k8s/`
+files already in those repos. The React `client/` app replaces the legacy
+static `frontend/` directory, while the DevOps deployment files remain at the
+repository root. Put `client/` and `server/` (and this `MANIFEST.md`) at the
+root of each repo.
 
 ## Before you commit: things to double check
 

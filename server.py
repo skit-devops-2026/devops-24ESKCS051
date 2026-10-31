@@ -5,7 +5,10 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-FRONTEND_ROOT = os.path.join(PROJECT_ROOT, "frontend")
+FRONTEND_ROOT = os.environ.get(
+    "ZENITH_STATIC_ROOT",
+    os.path.join(PROJECT_ROOT, "client"),
+)
 START_TIME = time.time()
 REQUEST_COUNT = 0
 REQUEST_LOCK = threading.Lock()

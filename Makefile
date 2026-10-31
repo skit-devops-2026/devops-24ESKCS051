@@ -7,7 +7,7 @@ test:
 	python3 -m unittest discover -s tests -p "test_*.py" -v
 
 build:
-	@echo "Static HTML/CSS/JS project - build validation complete"
+	cd client && npm ci && npm run build
 
 run:
 	python server.py
